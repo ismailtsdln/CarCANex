@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "carcanex"
+version = "0.1.0"
+description = "CAN Explorer & eXchange - Modern Vehicle CAN Analysis SDK"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Ismail Tasdelen"},
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Interface Engine/Protocol Translator",
+]
+dependencies = [
+    "cantools>=39.4.5",
+    "python-can>=4.3.1",
+    "click>=8.1.7",
+    "pandas>=2.1.4",
+    "numpy>=1.26.2",
+    "matplotlib>=3.8.2",
+    "rich>=13.7.0",
+]
+
+[project.scripts]
+carcanex = "carcanex.main:main"
+
+[project.urls]
+"Homepage" = "https://github.com/ismailtsdln/CarCANex"
+"Bug Tracker" = "https://github.com/ismailtsdln/CarCANex/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["carcanex*"]
